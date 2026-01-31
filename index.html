@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Shop - $1000 Demo</title>
+    <style>
+        /* --- 1. Basic Setup (Body & Fonts) --- */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f4f4f4; }
+        
+        /* --- 2. Navigation Bar --- */
+        nav { background: #222; color: white; padding: 15px; text-align: center; font-size: 24px; font-weight: bold; }
+
+        /* --- 3. Product Grid (Saman dikhane ki jagah) --- */
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+
+        /* --- 4. Product Card Styling (Mehengi look ke liye) --- */
+        .card { 
+            background: white; width: 280px; margin: 15px; border-radius: 15px; 
+            overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); } /* Hover effect */
+        
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .details { padding: 15px; text-align: center; }
+        .price { color: #e67e22; font-size: 20px; font-weight: bold; margin: 10px 0; }
+        .old-price { text-decoration: line-through; color: gray; font-size: 14px; }
+
+        /* --- 5. Buttons (Action) --- */
+        .btn { 
+            background: #27ae60; color: white; border: none; padding: 10px 20px; 
+            border-radius: 5px; cursor: pointer; width: 100%; font-weight: bold;
+        }
+
+        /* --- 6. Login Modal (Popup ka design) --- */
+        .modal { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.7); justify-content: center; align-items: center; 
+        }
+        .modal-content { background: white; padding: 30px; border-radius: 10px; text-align: center; width: 300px; }
+        .modal input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+<nav>Elite Furniture Store</nav>
+
+<div class="container">
+    <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Sofa"> <div class="details">
+            <h3>Luxury Royal Sofa</h3>
+            <p class="price">₹45,000 <span class="old-price">₹55,000</span></p>
+            <button class="btn" onclick="showLogin()">Book Now / Login</button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://via.placeholder.com/300x200" alt="Bed">
+        <div class="details">
+            <h3>Queen Size Bed</h3>
+            <p class="price">₹32,000 <span class="old-price">₹40,000</span></p>
+            <button class="btn" onclick="showLogin()">Book Now / Login</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="loginPopup">
+    <div class="modal-content">
+        <h2>Customer Login</h2>
+        <p>Please login to continue booking</p>
+        <input type="tel" placeholder="Enter Mobile Number">
+        <button class="btn" style="background: #222;" onclick="closeLogin()">Login</button>
+        <button onclick="closeLogin()" style="margin-top:10px; background:none; border:none; color:red; cursor:pointer;">Close</button>
+    </div>
+</div>
+
+<script>
+    // --- JavaScript Functions (Website kaise kaam karegi) ---
+
+    // 1. Popup dikhane ke liye function
+    function showLogin() {
+        document.getElementById('loginPopup').style.display = 'flex';
+    }
+
+    // 2. Popup band karne ke liye function
+    function closeLogin() {
+        document.getElementById('loginPopup').style.display = 'none';
+        alert("Login Successful! Ab aap booking kar sakte hain."); // Demo ke liye alert
+    }
+</script>
+
+</body>
+  </html>
+          
